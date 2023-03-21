@@ -11,9 +11,7 @@ import {
 import HomeLayout from "../components/layouts/home-layout";
 import Greeting from "../components/greeting";
 import PersonalInfo from "../components/personal-info";
-import SearchExperience from "../components/search-experience";
 import BlogResults from "../components/blog-results";
-import SearchApiKeyModal from "../components/SearchApiKeyModal";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return `index.html`;
@@ -35,7 +33,6 @@ const Home: Template<TemplateRenderProps> = ({
   const { _site, businessId } = document;
 
   return (
-    <SearchExperience experienceKey="blog-search" verticalKey="blogs">
       <HomeLayout
         GreetingContent={() => (
           <Greeting name="Aaron" role="Developer Evangelist @ Yext" />
@@ -61,9 +58,6 @@ const Home: Template<TemplateRenderProps> = ({
           },
         ]}
       />
-      {/* Once you have added your Search API Key, you can remove this component */}
-      <SearchApiKeyModal businessId={businessId} />
-    </SearchExperience> // New Content
   );
 };
 
