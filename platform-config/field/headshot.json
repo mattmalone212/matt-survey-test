@@ -1,0 +1,14 @@
+{
+  "$id": "c_headshot",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Headshot",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "imageType": {
+      "unconstrainedAspectRatioAllowed": true,
+      "noAllowedAspectRatios": true
+    }
+  },
+  "typeId": "image"
+}
