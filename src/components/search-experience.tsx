@@ -8,7 +8,7 @@ import {
 } from "@yext/search-headless-react";
 
 export const searchConfig = {
-  apiKey: fec2542d15fd0da4eafb96e395c3feb6,
+  apiKey: "fec2542d15fd0da4eafb96e395c3feb6",
   locale: "en",
   endpoints: SandboxEndpoints, // remove if using a production account
 };
