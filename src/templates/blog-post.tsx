@@ -35,7 +35,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 const SurveyTemplate: Template<TemplateRenderProps> = ({
   document,
 }) => {
-  const { id, name, c_prompts } = document;
+  const { id, name } = document;
 
   return (
     <>
@@ -45,11 +45,11 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
           <div className="flex items-center gap-2">
             <div className="flex gap-2 py-4">
                 THIS IS A TEST OF TEXT !!!
-              {document.c_prompts}
+              {document.name}
             </div>
           </div>
           {/* ...and ends here */}
-          <div className="font-display">{document.c_prompts}</div>
+          <div className="font-display">{document.name}</div>
         </InfoSection>
       </div>
     </>
