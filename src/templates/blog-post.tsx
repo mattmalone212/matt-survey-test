@@ -43,9 +43,10 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
         <InfoSection titleCssStyles="text-5xl pb-4" title={document.name}>
           {/* new code starts here... */}
           <div className="flex items-center gap-2">
-            <div className="flex gap-2 py-4">
-                THIS IS A TEST OF TEXT !!!
-                {document.c_prompts[0].name}
+            <div className="flex flex-col gap-2 py-4">
+              {c_prompts.map(prompt => {
+                  return <p> {prompt.name} </p>
+              }
             </div>
           </div>
           {/* ...and ends here */}
