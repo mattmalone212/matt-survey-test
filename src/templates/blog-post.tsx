@@ -20,7 +20,7 @@ export const config: TemplateConfig = {
     filter: {
       entityTypes: ["ce_survey"],
     },
-    fields: ["id", "name", "slug", "c_prompts.name"],
+    fields: ["id", "name", "slug", "c_prompts.name", "c_prompts.id"],
     localization: {
       locales: ["en"],
       primary: false,
@@ -35,7 +35,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 const SurveyTemplate: Template<TemplateRenderProps> = ({
   document,
 }) => {
-  const { id, name } = document;
+  const { id, name, c_prompts } = document;
 
   return (
     <>
@@ -45,7 +45,8 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
           <div className="flex items-center gap-2">
             <div className="flex gap-2 py-4">
                 THIS IS A TEST OF TEXT !!!
-              {document.name}
+                {c_prompts.map(child => {return ({child.name}}}
+                {document.name}
             </div>
           </div>
           {/* ...and ends here */}
