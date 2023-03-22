@@ -12,6 +12,7 @@ import {
 import { Image } from "@yext/pages/components";
 import InfoSection from "../components/info-section";
 import { formatDate, renderBlogContent } from "../util";
+import TextArea from "./TextArea";
 
 export const config: TemplateConfig = {
   stream: {
@@ -43,6 +44,11 @@ const BlogPost: Template<TemplateRenderProps> = ({
           {/* new code starts here... */}
           <div className="flex items-center gap-2">
             <div className="flex gap-2 py-4">
+              <TextArea
+                name="content"
+                label="Your review"
+                placeholder="Be specific. Share useful information about your relationship with this finacial advisor to help other people learn more about them."
+              />
             </div>
           </div>
           {/* ...and ends here */}
