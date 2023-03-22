@@ -19,7 +19,7 @@ export const config: TemplateConfig = {
     filter: {
       entityTypes: ["ce_survey"],
     },
-    fields: ["id", "name", "datePosted", "body", "slug", "c_prompts[]"],
+    fields: ["id", "name", "datePosted", "body", "slug", "c_prompts.name"],
     localization: {
       locales: ["en"],
       primary: false,
@@ -46,7 +46,7 @@ const BlogPost: Template<TemplateRenderProps> = ({
             </div>
           </div>
           {/* ...and ends here */}
-          <div className="font-display">{document.c_prompts[]}</div>
+          <div className="font-display">{document.c_prompts.name}</div>
         </InfoSection>
       </div>
     </>
