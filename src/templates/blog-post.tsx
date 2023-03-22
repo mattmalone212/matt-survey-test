@@ -44,7 +44,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
           {/* new code starts here... */}
           <div className="flex items-center gap-2">
             <div className="flex flex-col gap-2 py-4">
-              {c_prompts.map((prompt, index) => (
+              {c_prompts.map(prompt, index) => (
                   <p key={index}> {prompt.name} </p>
               )}
             </div>
