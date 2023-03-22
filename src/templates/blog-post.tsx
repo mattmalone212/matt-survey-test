@@ -20,7 +20,7 @@ export const config: TemplateConfig = {
     filter: {
       entityTypes: ["ce_survey"],
     },
-    fields: ["id", "name", "datePosted", "body", "slug", "c_prompts.name"],
+    fields: ["id", "name", "c_prompts.name"],
     localization: {
       locales: ["en"],
       primary: false,
