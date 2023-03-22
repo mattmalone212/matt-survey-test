@@ -45,7 +45,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
           <div className="flex items-center gap-2">
             <div className="flex gap-2 py-4">
                 THIS IS A TEST OF TEXT !!!
-                {document.c_prompts.name}
+                {document.c_prompts[0].name}
             </div>
           </div>
           {/* ...and ends here */}
