@@ -12,7 +12,7 @@ import {
 import { Image } from "@yext/pages/components";
 import InfoSection from "../components/info-section";
 import { formatDate, renderBlogContent } from "../util";
-import TextArea from "./TextArea";
+import TextArea from "../components/TextArea";
 
 export const config: TemplateConfig = {
   stream: {
