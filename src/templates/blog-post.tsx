@@ -49,7 +49,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
             </div>
           </div>
           {/* ...and ends here */}
-          <div className="font-display">{document.c_prompts.name}</div>
+          <div className="font-display">{document.c_prompts}</div>
         </InfoSection>
       </div>
     </>
