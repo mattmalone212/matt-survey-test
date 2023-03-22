@@ -20,7 +20,7 @@ export const config: TemplateConfig = {
     filter: {
       entityTypes: ["ce_survey"],
     },
-    fields: ["id", "name", "c_prompts.name"],
+    fields: ["id", "name", "slug", "c_prompts.name"],
     localization: {
       locales: ["en"],
       primary: false,
@@ -29,13 +29,13 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.id;
+  return document.slug;
 };
 
-const BlogPost: Template<TemplateRenderProps> = ({
+const SurveyTemplate: Template<TemplateRenderProps> = ({
   document,
 }: TemplateProps) => {
-  const { _site } = document;
+  const { id, name, c_prompts.name } = document;
 
   return (
     <>
