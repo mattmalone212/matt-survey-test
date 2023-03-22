@@ -35,7 +35,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 const SurveyTemplate: Template<TemplateRenderProps> = ({
   document,
 }: TemplateProps) => {
-  const { id, name, c_prompts.name } = document;
+  const { id, name, c_prompts } = document;
 
   return (
     <>
