@@ -1,57 +1,51 @@
 const { ComponentsContentPath } = require("@yext/search-ui-react");
-const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    "./src/**/*.{ts,tsx}",
-    "./lib/**/*.{js,jsx}",
+    "./src/**/*.{html,js,jsx,ts,tsx}",
     ComponentsContentPath,
   ],
   theme: {
-    screens: {
-      xs: "375px",
-      ...defaultTheme.screens,
-    },
     extend: {
       colors: {
-        primary: "var(--primary-color, #2563eb)",
-        "primary-light": "var(--primary-color-light, #dbeafe)",
-        "primary-dark": "var(--primary-color-dark, #1e40af)",
-        neutral: "var(--neutral-color, #4b5563)",
-        "neutral-light": "var(--neutral-color-light, #9ca3af)",
-        "neutral-dark": "var(--neutral-color-dark, #1f2937)",
-      },
-      borderRadius: {
-        cta: "var(--cta-border-radius, 1rem)",
+        "text": "black",
+        "brand-primary": "#1B78D0",
+        "brand-secondary": "#073866",
+        "brand-blue": "#0F70F0",
+        "brand-gray": {
+          100: "#F7F8F8",
+          200: "#EEEFF0",
+          300: "#E4E8EC",
+          400: "#DADCE0",
+          500: "#757575",
+          600: "#555555",
+          700: "#272D39",
+        },
+        "concrete": {
+          "reg": "#c5cace",
+          "highlight": "#8996a0"
+        },
+        "strategy": "rgba(33,134,162,.5)",
+        "principle": "rgba(238,192,86,.8)",
+        "initiative": "rgba(210,85,115,.6)",
+        "complete": "rgba(135,171,80,.6)",
+        "in-progress": "rgba(238,192,86,.8)",
+        "not-started": "rgba(137,150,160,.7)"
       },
       fontFamily: {
-        display: ["Changa"],
+        primary: "'Gilroy','Helvetica','sans-serif','system'",
+        secondary: "'Inter','Helvetica','sans-serif','system'",
       },
-      backgroundSize: {
-        overflow: "400% 400%",
+      boxShadow: {
+        "brand-shadow": "0 -1px 0 0 #CCC inset",
+        "card-shadow": "0 0 10px 3px rgba(0, 0, 0, 0.24)",
       },
-      animation: {
-        gradient: "gradient 15s ease infinite",
-      },
-
-      keyframes: {
-        gradient: {
-          "0%, 100%": {
-            "background-position": "0% 50%",
-          },
-          "50%": {
-            "background-position": "100% 50%",
-          },
-        },
-        rotate: {
-          "100%": { transform: "rotate(360deg)" },
-        },
-        dash: {
-          "0%": { transform: "rotate(0deg)", "stroke-dashoffset": 204 },
-          "50%": { transform: "rotate(45deg)", "stroke-dashoffset": 52 },
-          "100%": { transform: "rotate(360deg)", "stroke-dashoffset": 204 },
-        },
-      },
+      width: {
+        "tile": "30px",
+        "card-tile": "10px",
+        "facets": "30%",
+        "dropdown": "172px"
+      }
     },
   },
   plugins: [
