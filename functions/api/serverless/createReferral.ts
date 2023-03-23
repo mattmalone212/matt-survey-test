@@ -4,6 +4,7 @@ export async function main(argumentJson) {
    url = url.substring(questionMark);
    let urlParams = new URLSearchParams(url);
    let referralType = urlParams.get("referralType");
+   let referralJobId = urlParams.get("referralJobId");
    let referralFirstName = urlParams.get("referralFirstName");
    let referralLastName = urlParams.get("referralLastName");
    let referralEmailAddress = urlParams.get("referralEmailAddress");
@@ -22,6 +23,7 @@ export async function main(argumentJson) {
     "name": title,
     "c_referralName": referralFirstName + ' ' + referralLastName,
     "c_referralType": referralType,
+    "c_referralJobId": referralJobId,
     "c_referralEmailAddress" : referralEmailAddress,
 	"c_referralPhoneNumber" : referralPhoneNumber,
 	"c_referralURL" : referralUrl,

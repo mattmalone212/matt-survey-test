@@ -2,6 +2,7 @@ import axios from 'axios';
 
 type referralSubmission = {
   referralType: string;
+  referralJobId?: string;
   referralFirstName: string;
   referralLastName: string;
   referralEmailAddress: string;
@@ -22,6 +23,7 @@ export const sendReferralToFunction = (referral: referralSubmission) => {
   return axios.get ('https://stably-humorous-horse.pgsdemo.com/serverless/createReferral', {
     params: {
       referralType: referral.referralType,
+      referralJobId: referral.referralJobId,
       referralFirstName: referral.referralFirstName,
       referralLastName: referral.referralLastName,
       referralEmailAddress: referral.referralEmailAddress,

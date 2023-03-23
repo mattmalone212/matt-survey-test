@@ -8,6 +8,7 @@ import Form from "./Form";
 import Input from "./Input";
 import RadioInput from "./RadioInput";
 import TextArea from "./TextArea";
+import RadioText from "./RadioText"
 
 type Props = {
   //Insert Props Here
@@ -52,15 +53,19 @@ const ReferralForm = ({
                 </div>
               }
             >
-              <RadioInput
-                name="referralType"
-                label="Referral Type"
-                options={[
+              <RadioText
+                radioInputName="referralType"
+                radioInputLabel="Referral Type"
+                radioInputOptions={[
                   { label: "General", value: "GENERAL" },
                   {
-                    label: "Input Job ID", value: "JOB-ID",
+                    label: "Input Job ID",
+                    value: "JOB-ID",
                   },
                 ]}
+                textAreaName="referralJobId"
+                textAreaLabel="Job ID"
+                textAreaOpenValue="JOB-ID"
               />
 
               <Input
