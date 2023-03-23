@@ -24,7 +24,7 @@ export async function main(argumentJson) {
     "c_referralType": referralType,
     "c_referralEmailAddress" : referralEmailAddress,
 	"c_referralPhoneNumber" : referralPhoneNumber,
-	"c_referralUrl" : referralUrl,
+	"c_referralURL" : referralUrl,
 	"c_referralContent" : referralContent,
 	"c_referralDate" : date
     }
