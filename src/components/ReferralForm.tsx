@@ -53,7 +53,7 @@ const ReferralForm = ({
               }
             >
               <RadioInput
-                name="referral-type"
+                name="referralType"
                 label="Referral Type"
                 options={[
                   { label: "General", value: "GENERAL" },
@@ -64,38 +64,38 @@ const ReferralForm = ({
               />
 
               <Input
-                name="first-name"
+                name="referralFirstName"
                 label="First Name"
                 required
               />
 
               <Input
-                name="last-name"
+                name="referralLastName"
                 label="Last Name"
                 required
               />
 
               <Input
-                name="email-address"
+                name="referralEmailAddress"
                 label="Personal Email Address"
                 required
               />
 
               <Input
-                name="phone"
+                name="referralPhoneNumber"
                 label="Phone Number"
                 required
               />
 
               <Input
-                name="linkedin-url"
+                name="referralUrl"
                 label="URL to Social Work Profile"
                 placeholder="https://www.linkedin.com/in/jane-doe"
                 required
               />
 
               <TextArea
-                name="recommendation-text"
+                name="referralContent"
                 label="Why are you referring this candidate?"
               />
             </Form>
