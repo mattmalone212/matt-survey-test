@@ -13,6 +13,7 @@ export async function main(argumentJson) {
    let referralContent = urlParams.get("referralContent");
    let date = urlParams.get("date");
    let date2 = urlParams.get("date2");
+   let endorsementStrength = urlParams.get("endorsementStrength")
    let key = "66614b6b080af99262448781a0989e2c";
  
    const postUrl = 'https://api.yext.com/v2/accounts/me/entities?api_key=' + key + '&entityType=ce_referral' + '&v=20230323';
@@ -28,7 +29,8 @@ export async function main(argumentJson) {
 	"c_referralPhoneNumber" : referralPhoneNumber,
 	"c_referralURL" : referralUrl,
 	"c_referralContent" : referralContent,
-	"c_referralDate" : date
+	"c_referralDate" : date,
+    "c_endorsementStrength" : endorsementStrength
     }
    
     const response = await fetch(postUrl, {

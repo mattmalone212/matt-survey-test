@@ -9,6 +9,7 @@ type referralSubmission = {
   referralPhoneNumber: string;
   referralUrl: string;
   referralContent: string;
+  endorsementStrength: string;
 };
 
 
@@ -30,6 +31,7 @@ export const sendReferralToFunction = (referral: referralSubmission) => {
       referralPhoneNumber: referral.referralPhoneNumber,
       referralUrl: referral.referralUrl,
       referralContent: referral.referralContent,
+      endorsementStrength: referral.endorsementStrength,
       date: referralDate,
       date2: referralTitleDate
     },
