@@ -104,10 +104,10 @@ const ReferralForm = ({
                 label="Why are you referring this candidate?"
               />
 
-              <RadioText
-                radioInputName="endorsementStrength"
-                radioInputLabel="Endorsement Strength"
-                radioInputOptions={[
+              <RadioInput
+                name="endorsementStrength"
+                label="Endorsement Strength"
+                options={[
                   { label: "Strong", value: "STRONG" },
                   { label: "Medium", value: "MEDIUM" },
                   { label: "Weak", value: "WEAK" },
