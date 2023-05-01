@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import ReferralForm from "../components/ReferralForm";
+import SurveyForm from "../components/SurveyForm";
 import * as React from "react";
 import "../styles/index.css";
 import {
@@ -46,16 +46,17 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-center">
         <InfoSection titleCssStyles="text-5xl pb-4" title={'Make a Referral'}>
+
+
           {/* new code starts here... */}
           Provide us with some information on your referral. Talent Hub will send your referral a message asking them to apply to Yext. We will prioritize reviewing your referral's information once they have applied to a specific requisition.
-          <p>       </p>
-          <div className="flex items-center gap-8">
-          
-          <ReferralForm defaultExpanded />
+          </InfoSection>
 
-          </div>
+          
+          <SurveyForm defaultExpanded />
+
           {/* ...and ends here */}
-        </InfoSection>
+
       </div>
     </>
   );

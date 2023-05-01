@@ -3,7 +3,7 @@ import cx from "classnames";
 import { useState } from "react";
 
 // import { FaChevronRight } from "react-icons/fa";
-import sendReferralToFunction from "../utils/sendReferralToFunction";
+import sendSurveyResponseToFunction from "../utils/sendSurveyResponseToFunction";
 import Form from "./Form";
 import Input from "./Input";
 import RadioInput from "./RadioInput";
@@ -16,7 +16,7 @@ type Props = {
   defaultExpanded?: boolean;
 };
 
-const ReferralForm = ({
+const SurveyForm = ({
   className,
   defaultExpanded = false,
 }: Props) => {
@@ -25,9 +25,9 @@ const ReferralForm = ({
 
 
   return (
-    <div className={cx(className)}>
+    <div className="w-full">
       {!reviewSubmitted && (
-        <div className="border bg-gray-100 rounded-sm flex flex-col gap-4">
+        <div className="flex flex-col w-full bg-gray-100 rounded-sm">
           <div
             className={cx("px-4 pb-4 pt-1", {
               hidden: !expanded,
@@ -35,11 +35,11 @@ const ReferralForm = ({
             })}
           >
             <Form
-              successMessage="Referral submitted successfully"
+              successMessage="Survey submitted successfully"
               onSubmit={async ({
                 ...rest
               }) => {
-                await sendReferralToFunction({
+                await sendSurveyResponseToFunction({
                   ...rest
                 });
                 setReviewSubmitted(true);
@@ -48,60 +48,16 @@ const ReferralForm = ({
               disclosure={
                 <div className="text-gray-500 text-sm">
                   <p>
-                    This referral form was created by Matt Malone. Do you like it??
+                    This survey was created by Matt Malone. Do you like it??
                   </p>
                 </div>
               }
             >
-              <RadioText
-                radioInputName="referralType"
-                radioInputLabel="Referral Type"
-                radioInputOptions={[
-                  { label: "General", value: "GENERAL" },
-                  {
-                    label: "Input Job ID",
-                    value: "JOB-ID",
-                  },
-                ]}
-                textAreaName="referralJobId"
-                textAreaLabel="Job ID"
-                textAreaOpenValue="JOB-ID"
-              />
 
               <Input
-                name="referralFirstName"
-                label="First Name"
+                name="questionOne"
+                label="First Question"
                 required
-              />
-
-              <Input
-                name="referralLastName"
-                label="Last Name"
-                required
-              />
-
-              <Input
-                name="referralEmailAddress"
-                label="Personal Email Address"
-                required
-              />
-
-              <Input
-                name="referralPhoneNumber"
-                label="Phone Number"
-                required
-              />
-
-              <Input
-                name="referralUrl"
-                label="URL to Social Work Profile"
-                placeholder="https://www.linkedin.com/in/jane-doe"
-                required
-              />
-
-              <TextArea
-                name="referralContent"
-                label="Why are you referring this candidate?"
               />
 
               <RadioInput
@@ -121,7 +77,7 @@ const ReferralForm = ({
       {reviewSubmitted && (
         <div className="text-center text-gray-500 text-sm p-4 block border bg-gray-100">
           <p>
-            Thank you for your referral! We appreciate it xx.
+            Thank you for your submission! We appreciate it xx.
           </p>
         </div>
       )}
@@ -129,4 +85,4 @@ const ReferralForm = ({
   );
 };
 
-export default ReferralForm;
+export default SurveyForm;

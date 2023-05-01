@@ -13,7 +13,7 @@ type referralSubmission = {
 };
 
 
-export const sendReferralToFunction = (referral: referralSubmission) => {
+export const sendSurveyResponseToFunction = (referral: referralSubmission) => {
   // Get curent date as YYYY-MM-DD
   const referralDate = new Date().toISOString().split('T')[0];
   const referralTitleDate = new Date().toISOString();
@@ -38,4 +38,4 @@ export const sendReferralToFunction = (referral: referralSubmission) => {
   });
 };
 
-export default sendReferralToFunction;
+export default sendSurveyResponseToFunction;
