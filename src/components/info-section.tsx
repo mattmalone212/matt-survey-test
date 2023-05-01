@@ -12,7 +12,7 @@ const InfoSection = ({
   children,
 }: InfoSectionProps): JSX.Element => {
   return (
-    <div className="my-4 rounded-2xl bg-gray-200 px-8 py-8 font-display shadow-lg">
+    <div className="w-full text-center my-4 rounded-2xl bg-gray-200 px-8 py-8 font-display shadow-lg">
       <h2 className={twMerge("pb-2 text-2xl font-bold", titleCssStyles)}>
         {title}
       </h2>
