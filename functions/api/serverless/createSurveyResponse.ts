@@ -4,14 +4,17 @@ export async function main(argumentJson) {
    url = url.substring(questionMark);
    let urlParams = new URLSearchParams(url);
    let surveyId = urlParams.get("surveyId");
-   let promptIds = urlParams.get("promptIds");
-   let promptResponses = urlParams.get("promptResponses");
+   let promptIdsString = urlParams.get("promptIds");
+   let promptResponsesString = urlParams.get("promptResponses");
    let submissionTime = urlParams.get("submissionTime");
    let key = "66614b6b080af99262448781a0989e2c";
  
    const postUrl = 'https://api.yext.com/v2/accounts/me/entities?api_key=' + key + '&entityType=ce_surveyResponse' + '&v=20230323';
    
    const title = 'Survey Response on ' + submissionTime
+
+   let promptIds = promptIdsString.split(',')
+   let promptResponses = promptResponsesString.split(',')
 
     var thePromptResponses : object[] = []
 

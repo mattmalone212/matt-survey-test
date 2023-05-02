@@ -7,10 +7,13 @@ export const sendSurveyResponseToFunction = (surveyResponse: object, surveyId: a
   const responseTime = new Date().toISOString();
 
   const data = { ...surveyResponse};
-
-  var myPromptIds = Object.keys(data)
-  var myPromptResponses = Object.values(data)
   delete data.id
+
+  var myPromptIds = Object.keys(data).toString()
+  var myPromptResponses = Object.values(data).toString()
+
+  console.log(myPromptIds)
+  console.log(myPromptResponses)
 
   console.log('Sending Following Survey Response', data);
   return axios.get ('https://stably-humorous-horse.pgsdemo.com/serverless/createSurveyResponse', {
