@@ -3,7 +3,7 @@ export async function main(argumentJson) {
    let questionMark = url.indexOf("?");
    url = url.substring(questionMark);
    let urlParams = new URLSearchParams(url);
-   let surveyId = urlParams.get("surveyId");
+   let surveyId = urlParams.get("surveyCompleted");
    let promptIdsString = urlParams.get("promptIds");
    let promptResponsesString = urlParams.get("promptResponses");
    let submissionTime = urlParams.get("submissionTime");
