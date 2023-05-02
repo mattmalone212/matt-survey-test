@@ -49,7 +49,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.id;
+  return document.slug ? document.slug : document.id;
 };
 
 const SurveyTemplate: Template<TemplateRenderProps> = ({
@@ -82,7 +82,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
                 ...rest
               }) => {
                 await sendSurveyResponseToFunction({
-                  ...rest
+                  ...rest,id
                 });
                 setReviewSubmitted(true);
               }}

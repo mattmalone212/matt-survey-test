@@ -3,34 +3,32 @@ export async function main(argumentJson) {
    let questionMark = url.indexOf("?");
    url = url.substring(questionMark);
    let urlParams = new URLSearchParams(url);
-   let referralType = urlParams.get("referralType");
-   let referralJobId = urlParams.get("referralJobId");
-   let referralFirstName = urlParams.get("referralFirstName");
-   let referralLastName = urlParams.get("referralLastName");
-   let referralEmailAddress = urlParams.get("referralEmailAddress");
-   let referralPhoneNumber = urlParams.get("referralPhoneNumber");
-   let referralUrl = urlParams.get("referralUrl");
-   let referralContent = urlParams.get("referralContent");
-   let date = urlParams.get("date");
-   let date2 = urlParams.get("date2");
-   let endorsementStrength = urlParams.get("endorsementStrength")
+   let surveyId = urlParams.get("surveyId");
+   let promptIds = urlParams.get("promptIds");
+   let promptResponses = urlParams.get("promptResponses");
+   let submissionTime = urlParams.get("submissionTime");
    let key = "66614b6b080af99262448781a0989e2c";
  
-   const postUrl = 'https://api.yext.com/v2/accounts/me/entities?api_key=' + key + '&entityType=ce_referral' + '&v=20230323';
+   const postUrl = 'https://api.yext.com/v2/accounts/me/entities?api_key=' + key + '&entityType=ce_surveyResponse' + '&v=20230323';
    
-   const title = 'Referral for ' + referralFirstName + ' ' + referralLastName + ' on ' + date2
-	
-   let data = {
-    "name": title,
-    "c_referralName": referralFirstName + ' ' + referralLastName,
-    "c_referralType": referralType,
-    "c_referralJobId": referralJobId,
-    "c_referralEmailAddress" : referralEmailAddress,
-	"c_referralPhoneNumber" : referralPhoneNumber,
-	"c_referralURL" : referralUrl,
-	"c_referralContent" : referralContent,
-	"c_referralDate" : date,
-    "c_endorsementStrength" : endorsementStrength
+   const title = 'Survey Response on ' + submissionTime
+
+    var thePromptResponses : object[] = []
+
+    for (var i = 0; i < promptIds.length; i++) {
+        let myPrompt = {
+            "prompt": [
+                promptIds[i]
+              ],
+            "promptResponse" : promptResponses[i].toString()
+        }
+        thePromptResponses.push(myPrompt)
+    }
+
+    let data = {
+        "name": title,
+        "c_surveyCompleted" : surveyId,
+        "c_promptResponses" : thePromptResponses
     }
    
     const response = await fetch(postUrl, {
