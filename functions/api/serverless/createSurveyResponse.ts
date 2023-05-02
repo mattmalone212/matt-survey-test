@@ -30,7 +30,7 @@ export async function main(argumentJson) {
 
     let data = {
         "name": title,
-        "c_surveyCompleted" : surveyId,
+        "c_surveyCompleted" : [surveyId],
         "c_promptResponses" : thePromptResponses
     }
    
