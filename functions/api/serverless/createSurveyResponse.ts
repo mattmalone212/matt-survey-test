@@ -20,9 +20,7 @@ export async function main(argumentJson) {
 
     for (var i = 0; i < promptIds.length; i++) {
         let myPrompt = {
-            "prompt": [
-                promptIds[i]
-              ],
+            "prompt": promptIds[i],
             "promptResponse" : promptResponses[i].toString()
         }
         thePromptResponses.push(myPrompt)

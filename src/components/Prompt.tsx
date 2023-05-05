@@ -28,7 +28,7 @@ const Prompt = ({ className, name, label, options, defaultValue, promptType, pla
       </label>
     )}
 
-    {promptType == 'SINGLE-OPTION_SELECT' && (
+    {promptType == 'Single-option select' && (
       options.map((o) => (
         <div className="flex gap-2 items-center" key={o}>
           <input
@@ -40,7 +40,7 @@ const Prompt = ({ className, name, label, options, defaultValue, promptType, pla
         </div>
       )))}
 
-    {promptType == 'MULTI-OPTION_SELECT' && (
+    {promptType == 'Multi-option select' && (
       options.map((o) => (
         <div className="flex gap-2 items-center" key={o}>
           <input
@@ -52,7 +52,7 @@ const Prompt = ({ className, name, label, options, defaultValue, promptType, pla
         </div>
       )))}
 
-      {promptType == 'SINGLE-LINE_TEXT' && (
+      {promptType == 'Short response' && (
         <div className="relative mt-1 ">
           <input
             defaultValue={defaultValue}
@@ -68,7 +68,7 @@ const Prompt = ({ className, name, label, options, defaultValue, promptType, pla
         </div>
       )}
 
-      {promptType == 'MULTI-LINE_TEXT' && (
+      {promptType == 'Long response' && (
         <div className={cx(className)}>
         <div className="flex w-full flex-col group">
           <textarea

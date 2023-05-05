@@ -36,10 +36,9 @@ export const config: TemplateConfig = {
       "c_surveyTitle",
       "description",
       "slug", 
-      "c_prompts.name", 
-      "c_prompts.id", 
-      "c_prompts.c_responseType", 
-      "c_prompts.c_responseOptions"
+      "c_prompts.promptText",
+      "c_prompts.promptType",
+      "c_prompts.options"
     ],
     localization: {
       locales: ["en"],
@@ -98,10 +97,10 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
 
             {c_prompts.map((o) => (
               <Prompt
-                name={o.id}
-                label={o.name}
-                promptType={o.c_responseType}
-                options={o.c_responseOptions}
+                name={o.promptText}
+                label={o.promptText}
+                promptType={o.promptType}
+                options={o.options}
                 required
               />
             ))}
