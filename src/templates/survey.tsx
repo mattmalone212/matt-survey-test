@@ -34,6 +34,7 @@ export const config: TemplateConfig = {
       "id", 
       "name", 
       "c_surveyTitle",
+      "c_surveyCoverImage",
       "description",
       "slug", 
       "c_prompts.promptText",
@@ -54,7 +55,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
 const SurveyTemplate: Template<TemplateRenderProps> = ({
   document,
 }) => {
-  const { id, name, c_prompts, c_surveyTitle, description } = document;
+  const { id, name, c_prompts, c_surveyCoverImage, c_surveyTitle, description } = document;
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
 
@@ -66,6 +67,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
 
           {/* new code starts here... */}
           {description}
+          {c_surveyCoverImage}
           </InfoSection>
 
           
