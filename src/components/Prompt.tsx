@@ -23,7 +23,7 @@ const Prompt = ({ className, name, label, options, defaultValue, promptType, pla
     <div className={cx(className)}>
 
     {label && (
-      <label className="text-xs uppercase tracking-wider text-gray-500">
+      <label className="text-s font-semibold tracking-wider text-black">
         {label}
       </label>
     )}

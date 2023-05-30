@@ -4,6 +4,7 @@ export async function main(argumentJson) {
    url = url.substring(questionMark);
    let urlParams = new URLSearchParams(url);
    let surveyId = urlParams.get("surveyCompleted");
+   let responder = urlParams.get("surveyResponder")
    let promptIdsString = urlParams.get("promptIds");
    let promptResponsesString = urlParams.get("promptResponses");
    let submissionTime = urlParams.get("submissionTime");
@@ -28,6 +29,7 @@ export async function main(argumentJson) {
 
     let data = {
         "name": title,
+        "c_responder": responder,
         "c_surveyCompleted" : [surveyId],
         "c_promptResponses" : thePromptResponses
     }

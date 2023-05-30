@@ -36,6 +36,7 @@ export const config: TemplateConfig = {
       "c_surveyTitle",
       "description",
       "slug", 
+      "c_surveyCoverImage.url",
       "c_prompts.promptText",
       "c_prompts.promptType",
       "c_prompts.options"
@@ -58,6 +59,29 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
   const [reviewSubmitted, setReviewSubmitted] = useState(false);
 
 
+  const [yexterEmail, setYexterEmail] = React.useState<string>("");
+  const [yexterId, setYexterId] = React.useState<string>("");
+
+
+	React.useEffect(() => {
+		async function getData() {
+      const userEmail = window?.YEXT_AUTH?.visitor.telescopeEmail;
+      setYexterEmail(userEmail)
+      const params = new URLSearchParams({
+				v: "20230101",
+				api_key: "f221afe7dd1315f89eb403db4d446df8",
+				"emails": userEmail,
+				"limit": "1",
+			});
+			const yexterData = await fetch(`https://cdn.yextapis.com/v2/accounts/me/content/yexterEmailToName?${params.toString()}`)
+				.then(resp => resp.json())
+				.then(resp => resp.response.docs ? resp.response.docs[0] : null)
+			setYexterId(yexterData.name);
+		}
+    getData()
+	}, []);
+
+
   return (
     <>
       <div className="mx-auto flex w-full max-w-4xl flex-col items-start justify-center">
@@ -66,6 +90,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
 
           {/* new code starts here... */}
           {description}
+          <img src= {c_surveyCoverImage.url} />
           </InfoSection>
 
           
@@ -81,7 +106,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
                 ...rest
               }) => {
                 await sendSurveyResponseToFunction({
-                  ...rest,id
+                  ...rest,id,yexterId
                 });
                 setReviewSubmitted(true);
               }}
