@@ -12,7 +12,7 @@ export const sendSurveyResponseToFunction = (surveyResponse: object) => {
   const surveyId = data.id
   const responder = data.yexterId
   delete data.id
-  delete data.yexterId
+  delete data.yexterEmail
 
   var myPromptIds = Object.keys(data).toString()
   var myPromptResponses = Object.values(data).join('___')
@@ -26,7 +26,7 @@ export const sendSurveyResponseToFunction = (surveyResponse: object) => {
       promptIds: myPromptIds,
       promptResponses: myPromptResponses,
       submissionTime: responseTime,
-      surveryResponder: responder
+      surveyResponder: responder
   });
 };
 

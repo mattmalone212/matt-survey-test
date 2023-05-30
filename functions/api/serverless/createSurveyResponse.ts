@@ -1,4 +1,6 @@
 export async function main(argumentJson) {
+    console.log(argumentJson)
+
    let surveyId = argumentJson["surveyCompleted"];
    let responder = argumentJson["surveyResponder"]
    let promptIdsString = argumentJson["promptIds"]
