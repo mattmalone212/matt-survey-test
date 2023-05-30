@@ -20,7 +20,7 @@ export const sendSurveyResponseToFunction = (surveyResponse: object) => {
   console.log(myPromptResponses)
 
   console.log('Sending Following Survey Response', data);
-  return axios.get ('https://stably-humorous-horse.pgsdemo.com/serverless/createSurveyResponse', {
+  return axios.get ('survey.telescope.yext.com/serverless/createSurveyResponse', {
     params: {
       surveyCompleted: surveyId,
       promptIds: myPromptIds,
