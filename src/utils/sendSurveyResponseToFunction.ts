@@ -20,14 +20,12 @@ export const sendSurveyResponseToFunction = (surveyResponse: object) => {
   console.log(myPromptResponses)
 
   console.log('Sending Following Survey Response', data);
-  return axios.get ('survey.telescope.yext.com/serverless/createSurveyResponse', {
-    params: {
+  return axios.post ('survey.telescope.yext.com/serverless/createSurveyResponse', {
       surveyCompleted: surveyId,
       promptIds: myPromptIds,
       promptResponses: myPromptResponses,
       submissionTime: responseTime,
       surveryResponder: responder
-    },
   });
 };
 
