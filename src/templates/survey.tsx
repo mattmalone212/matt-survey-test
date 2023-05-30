@@ -78,7 +78,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
             className={cx("px-4 pb-4 pt-1")}
           >
             <Form
-              successMessage="Survey submitted successfully"
+              successMessage="Response submitted successfully"
               onSubmit={async ({
                 ...rest
               }) => {
@@ -87,11 +87,11 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
                 });
                 setReviewSubmitted(true);
               }}
-              saveButtonLabel="Submit Referral"
+              saveButtonLabel="Submit Response"
               disclosure={
                 <div className="text-gray-500 text-sm">
                   <p>
-                    This survey was created by Matt Malone. Do you like it??
+                    Your response will be sent to the Yext Knowledge Graph.
                   </p>
                 </div>
               }
@@ -114,7 +114,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
       {reviewSubmitted && (
         <div className="text-center text-gray-500 text-sm p-4 block border bg-gray-100">
           <p>
-            Thank you for your submission! We appreciate it xx.
+            Thank you for your response!
           </p>
         </div>
       )}
