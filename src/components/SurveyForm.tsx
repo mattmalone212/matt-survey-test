@@ -35,7 +35,7 @@ const SurveyForm = ({
             })}
           >
             <Form
-              successMessage="Survey submitted successfully"
+              successMessage="Response submitted successfully"
               onSubmit={async ({
                 ...rest
               }) => {
@@ -44,7 +44,7 @@ const SurveyForm = ({
                 });
                 setReviewSubmitted(true);
               }}
-              saveButtonLabel="Submit Referral"
+              saveButtonLabel="Submit Response"
               disclosure={
                 <div className="text-gray-500 text-sm">
                   <p>
