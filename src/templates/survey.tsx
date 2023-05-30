@@ -34,7 +34,6 @@ export const config: TemplateConfig = {
       "id", 
       "name", 
       "c_surveyTitle",
-      "c_surveyCoverImage",
       "description",
       "slug", 
       "c_prompts.promptText",
@@ -67,7 +66,6 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
 
           {/* new code starts here... */}
           {description}
-          {c_surveyCoverImage}
           </InfoSection>
 
           
