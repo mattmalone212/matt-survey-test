@@ -106,7 +106,7 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
                 ...rest
               }) => {
                 await sendSurveyResponseToFunction({
-                  ...rest,id,yexterId
+                  ...rest,id,yexterEmail
                 });
                 setReviewSubmitted(true);
               }}
