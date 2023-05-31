@@ -13,7 +13,7 @@ export async function main(argumentJson) {
    
    const title = 'Survey Response on ' + submissionTime
 
-   let promptIds = promptIdsString.split(',')
+   let promptIds = promptIdsString.split('"')
    let promptResponses = promptResponsesString.split('___')
 
     var thePromptResponses : object[] = []
