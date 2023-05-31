@@ -14,7 +14,7 @@ export const sendSurveyResponseToFunction = (surveyResponse: object) => {
   delete data.id
   delete data.yexterId
 
-  var myPromptIds = Object.keys(data).toString('"')
+  var myPromptIds = Object.keys(data).join('_*_')
   var myPromptResponses = Object.values(data).join('___')
 
   console.log(myPromptIds)
