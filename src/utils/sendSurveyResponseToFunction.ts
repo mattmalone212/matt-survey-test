@@ -10,9 +10,9 @@ export const sendSurveyResponseToFunction = (surveyResponse: object) => {
 
   const data = { ...surveyResponse};
   const surveyId = data.id
-  const responder = data.yexterId
+  const responder = data.yexterEmail
   delete data.id
-  delete data.yexterId
+  delete data.yexterEmail
 
   var myPromptIds = Object.keys(data).join('_*_')
   var myPromptResponses = Object.values(data).join('___')
