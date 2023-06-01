@@ -126,7 +126,6 @@ const SurveyTemplate: Template<TemplateRenderProps> = ({
                 label={o.promptText}
                 promptType={o.promptType}
                 options={o.options}
-                required
               />
             ))}
 
